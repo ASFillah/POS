@@ -30,3 +30,8 @@ Route::prefix('category')->group(function(){
     Route::get('/homeCare', [HomeCareController::class, 'homeCare']);
     Route::get('/babyKid', [BabyKidController::class, 'babyKid']);
 });
+
+Route::get('/user/{id}/name/{name}', function
+($id, $name){
+    return 'ID: '.$id.' Name: '.$name;
+});
