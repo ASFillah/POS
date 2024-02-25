@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\BabyKidController;
-use App\Http\Controllers\BeautyHealthController;
-use App\Http\Controllers\FoodBeverageController;
-use App\Http\Controllers\HomeCareController;
+use App\Http\Controllers\ProductsController\BabyKidController;
+use App\Http\Controllers\ProductsController\BeautyHealthController;
+use App\Http\Controllers\ProductsController\FoodBeverageController;
+use App\Http\Controllers\ProductsController\HomeCareController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,8 +25,8 @@ Route::get('/', function () {
 Route::get('home', [HomeController::class, 'home']);
 
 Route::prefix('category')->group(function(){
-    Route::get('/foodBeverage', [FoodBeverageController::class, 'index']);
-    Route::get('/beautyHealth', [BeautyHealthController::class, 'index']);
-    Route::get('/homeCare', [HomeCareController::class, 'index']);
-    Route::get('babyKid', [BabyKidController::class, 'index']);
+    Route::get('/foodBeverage', [FoodBeverageController::class, 'foodBeverage']);
+    Route::get('/beautyHealth', [BeautyHealthController::class, 'beautyHealth']);
+    Route::get('/homeCare', [HomeCareController::class, 'homeCare']);
+    Route::get('/babyKid', [BabyKidController::class, 'babyKid']);
 });
